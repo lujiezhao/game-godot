@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://crq8smikrb6cf"]
+
+[ext_resource type="Script" uid="uid://b67gulvuyto10" path="res://source/main.gd" id="1_kaxhg"]
+[ext_resource type="PackedScene" uid="uid://dif4nrmai8j2t" path="res://source/game_map.tscn" id="2_62cc7"]
+[ext_resource type="TileSet" uid="uid://cvvx2xy4xfx62" path="res://source/collision.tres" id="3_s8x7u"]
+[ext_resource type="Script" uid="uid://dn7qmwc3ge804" path="res://source/npcs.gd" id="6_2uit2"]
+[ext_resource type="Script" uid="uid://dn3v4tec5rup5" path="res://source/camera_2d.gd" id="6_4naa1"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_c1q7g"]
+properties/0/path = NodePath(".:game_id")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
+[node name="main" type="Node2D" groups=["Buildings", "Interactives", "Npcs", "Players"]]
+script = ExtResource("1_kaxhg")
+
+[node name="MultiplayerSpawnerPlayer" type="MultiplayerSpawner" parent="."]
+spawn_path = NodePath("../Characters/Players")
+
+[node name="MultiplayerSpawnerNpcs" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://r2qh2j5sgn2r")
+spawn_path = NodePath("../Characters/Npcs")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_c1q7g")
+
+[node name="game_map" parent="." instance=ExtResource("2_62cc7")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="game_map"]
+tile_set = ExtResource("3_s8x7u")
+
+[node name="NavLayer" type="TileMapLayer" parent="game_map"]
+tile_set = ExtResource("3_s8x7u")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 160)
+script = ExtResource("6_4naa1")
+
+[node name="Buildings" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Players" type="Node2D" parent="Characters"]
+y_sort_enabled = true
+
+[node name="Npcs" type="Node2D" parent="Characters"]
+y_sort_enabled = true
+script = ExtResource("6_2uit2")
+
+[editable path="game_map"]

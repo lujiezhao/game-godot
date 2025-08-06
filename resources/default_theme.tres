@@ -1,0 +1,29 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cwp6ntbyyshvy"]
+
+[ext_resource type="StyleBox" uid="uid://cu1kfbfd1khk8" path="res://resources/colors/button_orange_hover.tres" id="1_2pkyf"]
+[ext_resource type="FontFile" uid="uid://xec1sb1npjhp" path="res://resources/fonts/KarenFat.ttf" id="1_mwhd1"]
+[ext_resource type="StyleBox" uid="uid://l2f5nin3dqj8" path="res://resources/colors/button_orange.tres" id="1_nva1m"]
+[ext_resource type="StyleBox" uid="uid://ba5ihumc2f5x4" path="res://resources/colors/checkbox_transparent_bg.tres" id="3_og51b"]
+
+[resource]
+default_font = ExtResource("1_mwhd1")
+default_font_size = 16
+Button/colors/font_color = Color(0.121569, 0.121569, 0.121569, 1)
+Button/colors/font_focus_color = Color(0.0941176, 0.0941176, 0.0823529, 1)
+Button/colors/font_hover_color = Color(0.0941176, 0.0941176, 0.0823529, 1)
+Button/colors/font_hover_pressed_color = Color(0.0941176, 0.0941176, 0.0823529, 1)
+Button/colors/font_pressed_color = Color(0.0941176, 0.0941176, 0.0823529, 1)
+Button/colors/icon_focus_color = Color(0.0941176, 0.0941176, 0.0823529, 1)
+Button/colors/icon_hover_color = Color(0.0941176, 0.0941176, 0.0823529, 1)
+Button/colors/icon_hover_pressed_color = Color(0.0941176, 0.0941176, 0.0823529, 1)
+Button/colors/icon_normal_color = Color(0.0941176, 0.0941176, 0.0823529, 1)
+Button/styles/focus = ExtResource("1_2pkyf")
+Button/styles/hover = ExtResource("1_2pkyf")
+Button/styles/normal = ExtResource("1_nva1m")
+Button/styles/pressed = ExtResource("1_2pkyf")
+CheckBox/styles/disabled = ExtResource("3_og51b")
+CheckBox/styles/focus = ExtResource("3_og51b")
+CheckBox/styles/hover = ExtResource("3_og51b")
+CheckBox/styles/hover_pressed = ExtResource("3_og51b")
+CheckBox/styles/normal = ExtResource("3_og51b")
+CheckBox/styles/pressed = ExtResource("3_og51b")

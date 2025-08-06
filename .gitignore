@@ -1,0 +1,13 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+.DS_Store
+
+.env*
+
+/dist
+
+.godot/
+
+*.translation

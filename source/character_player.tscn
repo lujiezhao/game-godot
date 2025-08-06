@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0dbpy4x08i7w"]
+
+[ext_resource type="PackedScene" uid="uid://cwm44i7u0u6v8" path="res://source/character.tscn" id="1_1vug4"]
+[ext_resource type="Script" uid="uid://odv1n3revy1e" path="res://source/character_player.gd" id="2_4sb7e"]
+[ext_resource type="PackedScene" uid="uid://cbggq33wv8do5" path="res://component/player_input_synchronizer.tscn" id="3_t434b"]
+
+[node name="player" instance=ExtResource("1_1vug4")]
+script = ExtResource("2_4sb7e")
+
+[node name="PlayerInputSynchronizer" parent="." index="0" instance=ExtResource("3_t434b")]
+
+[node name="Sprite2D" parent="." index="6"]
+texture = null
+
+[node name="unit_name" parent="." index="11"]
+text = "Player"

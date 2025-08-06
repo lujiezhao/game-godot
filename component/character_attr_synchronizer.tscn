@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckdkhtu4q6dy6"]
+
+[ext_resource type="Script" uid="uid://c2g7m3k0wjs4k" path="res://component/character_attr_synchronizer.gd" id="1_mv2ea"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_noer3"]
+properties/0/path = NodePath(".:texture_url")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:persona_name")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:persona_ready")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+
+[node name="character_attr_synchronizer" type="MultiplayerSynchronizer"]
+root_path = NodePath(".")
+replication_config = SubResource("SceneReplicationConfig_noer3")
+script = ExtResource("1_mv2ea")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+autostart = true

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://r2qh2j5sgn2r"]
+
+[ext_resource type="PackedScene" uid="uid://cwm44i7u0u6v8" path="res://source/character.tscn" id="1_1u3iu"]
+[ext_resource type="Script" uid="uid://cshtnhu8q3xrv" path="res://source/character_npc.gd" id="2_oiupb"]
+
+[node name="Npc" instance=ExtResource("1_1u3iu")]
+script = ExtResource("2_oiupb")
+
+[node name="CoverArea" parent="." index="4"]
+visible = true

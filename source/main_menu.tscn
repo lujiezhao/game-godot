@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://df2wd7omwv45x"]
+
+[ext_resource type="Script" uid="uid://x3r7dehcqh4g" path="res://source/main_menu.gd" id="1_eqk2l"]
+[ext_resource type="Script" uid="uid://cgt8rcqacjb00" path="res://source/login_button.gd" id="3_eqk2l"]
+[ext_resource type="PackedScene" uid="uid://de0ij1xpkrvnq" path="res://component/game_data_file_dialog.tscn" id="4_cpsjd"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_eqk2l")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="start" type="Node2D" parent="UI"]
+visible = false
+
+[node name="Input_game_id" type="LineEdit" parent="UI/start"]
+offset_left = 180.0
+offset_top = 144.0
+offset_right = 300.0
+offset_bottom = 175.0
+text = "GY3MCVANW"
+placeholder_text = "Game Id"
+
+[node name="Button_enter_game" type="Button" parent="UI/start"]
+offset_left = 180.0
+offset_top = 192.0
+offset_right = 307.0
+offset_bottom = 223.0
+mouse_default_cursor_shape = 2
+text = "Enter the game"
+
+[node name="Button_import_json" type="Button" parent="UI/start"]
+offset_left = 338.0
+offset_top = 191.0
+offset_right = 465.0
+offset_bottom = 222.0
+mouse_default_cursor_shape = 2
+text = "Import Json Data"
+
+[node name="server" type="CheckBox" parent="UI/start"]
+offset_left = 177.0
+offset_top = 50.0
+offset_right = 255.0
+offset_bottom = 81.0
+mouse_default_cursor_shape = 2
+button_pressed = true
+text = "Server"
+
+[node name="client" type="CheckBox" parent="UI/start"]
+offset_left = 289.0
+offset_top = 49.0
+offset_right = 362.0
+offset_bottom = 80.0
+mouse_default_cursor_shape = 2
+text = "Client"
+
+[node name="ip" type="LineEdit" parent="UI/start"]
+offset_left = 181.0
+offset_top = 93.0
+offset_right = 347.0
+offset_bottom = 124.0
+text = "127.0.0.1"
+placeholder_text = "IP"
+
+[node name="port" type="LineEdit" parent="UI/start"]
+offset_left = 385.0
+offset_top = 92.0
+offset_right = 464.0
+offset_bottom = 123.0
+tooltip_text = "Port"
+text = "9528"
+placeholder_text = "port"
+
+[node name="gameDataFileDialog" parent="UI/start" instance=ExtResource("4_cpsjd")]
+visible = false
+
+[node name="Node2D" type="Node2D" parent="UI"]
+
+[node name="login_button" type="Button" parent="UI/Node2D"]
+offset_left = 274.0
+offset_top = 122.0
+offset_right = 374.0
+offset_bottom = 153.0
+mouse_default_cursor_shape = 2
+text = "Sign In"
+script = ExtResource("3_eqk2l")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Node2D/login_button"]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 37.0
+offset_right = 98.0
+offset_bottom = 77.0

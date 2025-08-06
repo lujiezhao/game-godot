@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://nxrwkcnqs5f0"]
+
+[ext_resource type="Script" uid="uid://b2btu0ga4ft18" path="res://source/start.gd" id="1_xig0v"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="start" type="Node2D" parent="UI"]
+script = ExtResource("1_xig0v")
+
+[node name="Input_game_id" type="LineEdit" parent="UI/start"]
+offset_left = 180.0
+offset_top = 144.0
+offset_right = 300.0
+offset_bottom = 175.0
+text = "GYV4KJ3H4"
+placeholder_text = "Game Id"
+
+[node name="Button_enter_game" type="Button" parent="UI/start"]
+offset_left = 337.0
+offset_top = 144.0
+offset_right = 464.0
+offset_bottom = 175.0
+text = "Enter the game"
+
+[node name="server" type="CheckBox" parent="UI/start"]
+offset_left = 177.0
+offset_top = 50.0
+offset_right = 255.0
+offset_bottom = 81.0
+button_pressed = true
+text = "Server"
+
+[node name="client" type="CheckBox" parent="UI/start"]
+offset_left = 289.0
+offset_top = 49.0
+offset_right = 362.0
+offset_bottom = 80.0
+text = "Client"
+
+[node name="ip" type="LineEdit" parent="UI/start"]
+offset_left = 181.0
+offset_top = 93.0
+offset_right = 347.0
+offset_bottom = 124.0
+text = "127.0.0.1"
+placeholder_text = "IP"
+
+[node name="port" type="LineEdit" parent="UI/start"]
+offset_left = 385.0
+offset_top = 92.0
+offset_right = 464.0
+offset_bottom = 123.0
+text = "9528"
+placeholder_text = "port"
+
+[connection signal="button_down" from="UI/start/Button_enter_game" to="UI/start" method="_on_button_button_down"]
+[connection signal="toggled" from="UI/start/server" to="UI/start" method="_on_server_toggled"]
+[connection signal="toggled" from="UI/start/client" to="UI/start" method="_on_client_toggled"] 
