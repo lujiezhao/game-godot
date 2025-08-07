@@ -135,6 +135,6 @@ func _build_response(code: int, status: String, content_type: String, body: Stri
 
 func _exit_tree():
 	_is_running = false
-	if _thread and _thread.is_active and _thread.is_active():
+	if _thread:
 		_thread.wait_to_finish()
 	print("HTTP server stopped")

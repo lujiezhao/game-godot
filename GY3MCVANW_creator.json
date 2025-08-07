@@ -1,0 +1,511 @@
+{
+    "id": 42824,
+    "name": "（默认）世界名称",
+    "world_id": "OJaRsE9js",
+    "user_id": "a3d1f7b6-3d7f-4b8a-a064-5e034b6fd47f",
+    "world_view": "",
+    "reference": "",
+    "knowledge_details": "",
+    "status": "normal",
+    "version": 3,
+    "characters_map": [
+        "CJWFZIIYN",
+        "COU853NOI",
+        "C6MR9FPGG",
+        "C0JTV3CS4",
+        "CV31IYUM1"
+    ],
+    "games": [
+        {
+            "id": 47309,
+            "name": "(默认） 游戏名称",
+            "category": "detective",
+            "operation_name": "",
+            "background": "",
+            "game_id": "GY3MCVANW",
+            "user_id": "a3d1f7b6-3d7f-4b8a-a064-5e034b6fd47f",
+            "image": "",
+            "lang": "",
+            "chapters_map": [
+                "XWrO7fILL"
+            ],
+            "intro": "",
+            "conclusion": "",
+            "genre": "published",
+            "mechanics": "RPG",
+            "attribute": "normal",
+            "level": "",
+            "moderate_type": "4",
+            "chapters": [
+                {
+                    "id": 139637,
+                    "name": "Chapter",
+                    "image": "",
+                    "chapter_id": "XWrO7fILL",
+                    "user_id": "a3d1f7b6-3d7f-4b8a-a064-5e034b6fd47f",
+                    "background": "",
+                    "init_dialogue": [],
+                    "goals": [
+                        {
+                            "key": "goals0",
+                            "value": "",
+                            "subgoals": [
+                                {
+                                    "id": "HNS03yqzu",
+                                    "subgoal": ""
+                                },
+                                {
+                                    "id": "zY6bZx30Y",
+                                    "subgoal": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "goals1",
+                            "value": "",
+                            "subgoals": [
+                                {
+                                    "id": "M_JF786PN",
+                                    "subgoal": "",
+                                    "goal_anchor": [
+                                        {
+                                            "id": "uiPjpehaz",
+                                            "affiliate": "",
+                                            "anchor_name": "",
+                                            "character_id": "",
+                                            "affiliate_type": "",
+                                            "anchor_init_value": "",
+                                            "anchor_goal_reached_value": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "LIMaZ-drV",
+                                    "subgoal": "",
+                                    "goal_anchor": [
+                                        {
+                                            "id": "ONDOQ4wlN",
+                                            "affiliate": "",
+                                            "anchor_name": "",
+                                            "character_id": "",
+                                            "affiliate_type": "",
+                                            "anchor_init_value": "",
+                                            "anchor_goal_reached_value": ""
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "goal_info": {
+                        "no_goal": false,
+                        "goal_displayed": "",
+                        "all_trigger_fail": false
+                    },
+                    "intro": "",
+                    "lore_list": [],
+                    "character_info": [
+                        {
+                            "emotion": "",
+                            "character_id": "CJWFZIIYN",
+                            "recent_ongoing": "",
+                            "personal_setting": ""
+                        },
+                        {
+                            "emotion": "",
+                            "character_id": "COU853NOI",
+                            "recent_ongoing": "",
+                            "personal_setting": ""
+                        },
+                        {
+                            "emotion": "",
+                            "character_id": "C6MR9FPGG",
+                            "recent_ongoing": "",
+                            "personal_setting": ""
+                        },
+                        {
+                            "emotion": "",
+                            "character_id": "C0JTV3CS4",
+                            "recent_ongoing": "",
+                            "personal_setting": ""
+                        },
+                        {
+                            "emotion": "",
+                            "character_id": "CV31IYUM1",
+                            "recent_ongoing": "",
+                            "personal_setting": ""
+                        }
+                    ],
+                    "participants": [
+                        {
+                            "character_id": "CJWFZIIYN",
+                            "name": "角色名称"
+                        },
+                        {
+                            "character_id": "COU853NOI",
+                            "name": "角色名称2"
+                        },
+                        {
+                            "character_id": "C6MR9FPGG",
+                            "name": "角色名称3"
+                        },
+                        {
+                            "character_id": "C0JTV3CS4",
+                            "name": "角色名称4"
+                        },
+                        {
+                            "character_id": "CV31IYUM1",
+                            "name": "角色名称5"
+                        }
+                    ],
+                    "endings": ""
+                }
+            ],
+            "worlds": null,
+            "interaction": null,
+            "moderation_level": "G",
+            "background_musics": null,
+            "subdomain": null,
+            "game_tags": [],
+            "social_references": {},
+            "source_template_id": "",
+            "image_style": "comics",
+            "use_shared_memory": false,
+            "in_public_mode": false,
+            "initialize_2d_status": true,
+            "editors": [],
+            "create_source": "1",
+            "created_at": "2025-05-15T09:11:52Z",
+            "updated_at": "2025-05-15T09:13:07Z"
+        }
+    ],
+    "characters": [
+        {
+            "id": 155631,
+            "character_id": "CJWFZIIYN",
+            "user_id": "a3d1f7b6-3d7f-4b8a-a064-5e034b6fd47f",
+            "discord_id": "",
+            "name": "角色名称",
+            "max_epochs": "90",
+            "prompt": "",
+            "plugins": [
+                {
+                    "phase": "default",
+                    "plugins": [
+                        {
+                            "data": {
+                                "message": ""
+                            },
+                            "name": "HistoryPlugin"
+                        },
+                        {
+                            "data": {
+                                "message": ""
+                            },
+                            "name": "ChatPluginUser"
+                        }
+                    ]
+                }
+            ],
+            "type": "npc",
+            "model_config": {
+                "chat_model": "gpt-3.5-turbo-0125",
+                "temperature": 0.5
+            },
+            "game_info": {
+                "max_epochs": "90",
+                "max_epochs_response": ""
+            },
+            "avatar": "",
+            "sprite_url": "",
+            "phases": [
+                "default"
+            ],
+            "pronouns": "female",
+            "age": "",
+            "background": "",
+            "appearance": "",
+            "voice_profile": null,
+            "traits": [],
+            "tone": [],
+            "interests": null,
+            "response_emojis": false,
+            "response_gestures": false,
+            "dialogue_reference": "",
+            "intro": "",
+            "character_tags": [],
+            "image_references": [],
+            "opening_line": "",
+            "creator": "",
+            "creator_notes": "",
+            "version": 0,
+            "modules": [],
+            "module_details": null,
+            "entries": null,
+            "created_at": "2025-05-15T09:11:52Z",
+            "updated_at": "2025-05-15T09:12:15Z"
+        },
+        {
+            "id": 155632,
+            "character_id": "COU853NOI",
+            "user_id": "a3d1f7b6-3d7f-4b8a-a064-5e034b6fd47f",
+            "discord_id": "",
+            "name": "角色名称2",
+            "max_epochs": "90",
+            "prompt": "",
+            "plugins": [
+                {
+                    "phase": "default",
+                    "plugins": [
+                        {
+                            "data": {
+                                "message": ""
+                            },
+                            "name": "HistoryPlugin"
+                        },
+                        {
+                            "data": {
+                                "message": ""
+                            },
+                            "name": "ChatPluginUser"
+                        }
+                    ]
+                }
+            ],
+            "type": "npc",
+            "model_config": {
+                "chat_model": "gpt-3.5-turbo-0125",
+                "temperature": 0.5
+            },
+            "game_info": {
+                "max_epochs": "90",
+                "max_epochs_response": ""
+            },
+            "avatar": "",
+            "sprite_url": "",
+            "phases": [
+                "default"
+            ],
+            "pronouns": "female",
+            "age": "",
+            "background": "",
+            "appearance": "",
+            "voice_profile": null,
+            "traits": [],
+            "tone": [],
+            "interests": null,
+            "response_emojis": false,
+            "response_gestures": false,
+            "dialogue_reference": "",
+            "intro": "",
+            "character_tags": [],
+            "image_references": [],
+            "opening_line": "",
+            "creator": "",
+            "creator_notes": "",
+            "version": 0,
+            "modules": [],
+            "module_details": null,
+            "entries": null,
+            "created_at": "2025-05-15T09:11:57Z",
+            "updated_at": "2025-05-15T09:12:15Z"
+        },
+        {
+            "id": 155633,
+            "character_id": "C6MR9FPGG",
+            "user_id": "a3d1f7b6-3d7f-4b8a-a064-5e034b6fd47f",
+            "discord_id": "",
+            "name": "角色名称3",
+            "max_epochs": "90",
+            "prompt": "",
+            "plugins": [
+                {
+                    "phase": "default",
+                    "plugins": [
+                        {
+                            "data": {
+                                "message": ""
+                            },
+                            "name": "HistoryPlugin"
+                        },
+                        {
+                            "data": {
+                                "message": ""
+                            },
+                            "name": "ChatPluginUser"
+                        }
+                    ]
+                }
+            ],
+            "type": "npc",
+            "model_config": {
+                "chat_model": "gpt-3.5-turbo-0125",
+                "temperature": 0.5
+            },
+            "game_info": {
+                "max_epochs": "90",
+                "max_epochs_response": ""
+            },
+            "avatar": "",
+            "sprite_url": "",
+            "phases": [
+                "default"
+            ],
+            "pronouns": "female",
+            "age": "",
+            "background": "",
+            "appearance": "",
+            "voice_profile": null,
+            "traits": [],
+            "tone": [],
+            "interests": null,
+            "response_emojis": false,
+            "response_gestures": false,
+            "dialogue_reference": "",
+            "intro": "",
+            "character_tags": [],
+            "image_references": [],
+            "opening_line": "",
+            "creator": "",
+            "creator_notes": "",
+            "version": 0,
+            "modules": [],
+            "module_details": null,
+            "entries": null,
+            "created_at": "2025-05-15T09:12:00Z",
+            "updated_at": "2025-05-15T09:12:15Z"
+        },
+        {
+            "id": 155634,
+            "character_id": "C0JTV3CS4",
+            "user_id": "a3d1f7b6-3d7f-4b8a-a064-5e034b6fd47f",
+            "discord_id": "",
+            "name": "角色名称4",
+            "max_epochs": "90",
+            "prompt": "",
+            "plugins": [
+                {
+                    "phase": "default",
+                    "plugins": [
+                        {
+                            "data": {
+                                "message": ""
+                            },
+                            "name": "HistoryPlugin"
+                        },
+                        {
+                            "data": {
+                                "message": ""
+                            },
+                            "name": "ChatPluginUser"
+                        }
+                    ]
+                }
+            ],
+            "type": "npc",
+            "model_config": {
+                "chat_model": "gpt-3.5-turbo-0125",
+                "temperature": 0.5
+            },
+            "game_info": {
+                "max_epochs": "90",
+                "max_epochs_response": ""
+            },
+            "avatar": "",
+            "sprite_url": "",
+            "phases": [
+                "default"
+            ],
+            "pronouns": "female",
+            "age": "",
+            "background": "",
+            "appearance": "",
+            "voice_profile": null,
+            "traits": [],
+            "tone": [],
+            "interests": null,
+            "response_emojis": false,
+            "response_gestures": false,
+            "dialogue_reference": "",
+            "intro": "",
+            "character_tags": [],
+            "image_references": [],
+            "opening_line": "",
+            "creator": "",
+            "creator_notes": "",
+            "version": 0,
+            "modules": [],
+            "module_details": null,
+            "entries": null,
+            "created_at": "2025-05-15T09:12:04Z",
+            "updated_at": "2025-05-15T09:12:15Z"
+        },
+        {
+            "id": 155635,
+            "character_id": "CV31IYUM1",
+            "user_id": "a3d1f7b6-3d7f-4b8a-a064-5e034b6fd47f",
+            "discord_id": "",
+            "name": "角色名称5",
+            "max_epochs": "90",
+            "prompt": "",
+            "plugins": [
+                {
+                    "phase": "default",
+                    "plugins": [
+                        {
+                            "data": {
+                                "message": ""
+                            },
+                            "name": "HistoryPlugin"
+                        },
+                        {
+                            "data": {
+                                "message": ""
+                            },
+                            "name": "ChatPluginUser"
+                        }
+                    ]
+                }
+            ],
+            "type": "npc",
+            "model_config": {
+                "chat_model": "gpt-3.5-turbo-0125",
+                "temperature": 0.5
+            },
+            "game_info": {
+                "max_epochs": "90",
+                "max_epochs_response": ""
+            },
+            "avatar": "",
+            "sprite_url": "",
+            "phases": [
+                "default"
+            ],
+            "pronouns": "female",
+            "age": "",
+            "background": "",
+            "appearance": "",
+            "voice_profile": null,
+            "traits": [],
+            "tone": [],
+            "interests": null,
+            "response_emojis": false,
+            "response_gestures": false,
+            "dialogue_reference": "",
+            "intro": "",
+            "character_tags": [],
+            "image_references": [],
+            "opening_line": "",
+            "creator": "",
+            "creator_notes": "",
+            "version": 0,
+            "modules": [],
+            "module_details": null,
+            "entries": null,
+            "created_at": "2025-05-15T09:12:07Z",
+            "updated_at": "2025-05-15T09:12:15Z"
+        }
+    ],
+    "created_at": "2025-05-15T09:11:52Z",
+    "updated_at": "2025-06-17T00:04:55Z"
+}

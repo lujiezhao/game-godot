@@ -44,7 +44,7 @@ func init_building(building_data) -> void:
 	building.collision_shape_2d.shape.size.y = building_data.height
 	var _scale = building_data.display_width / building_data.width
 	building.scale = Vector2(_scale, _scale)
-	printt(building_data.id, building_data.display_width, building_data.display_height)
+	#printt(building_data.id, building_data.display_width, building_data.display_height)
 
 func _on_game_map_ready() -> void:
 	if game_map_readyed == false:
