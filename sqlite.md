@@ -114,11 +114,12 @@ CREATE TABLE goal_anchors (
 );
 ```
 
-#### 1.6 角色表 (characters)
+#### 1.6 角色表 (characters) - **重新设计**
 ```sql
 CREATE TABLE characters (
-	character_id TEXT PRIMARY KEY,
-	chapter_id TEXT NOT NULL,
+	id INTEGER PRIMARY KEY,
+	character_id TEXT UNIQUE NOT NULL,
+	world_id TEXT NOT NULL, -- 从 chapter_id 改为 world_id
 	name TEXT NOT NULL,
 	type TEXT NOT NULL, -- 'npc' or 'player'
 	avatar TEXT,
@@ -130,9 +131,46 @@ CREATE TABLE characters (
 	image_references TEXT, -- JSON存储
 	modules TEXT, -- JSON存储
 	appearance TEXT,
+	texture TEXT,
+	-- 创作者配置字段（角色的基础设定）
+	max_epochs TEXT DEFAULT "90",
+	prompt TEXT,
+	plugins TEXT, -- JSON存储
+	model_config TEXT, -- JSON存储
+	game_info TEXT, -- JSON存储
+	sprite_url TEXT,
+	pronouns TEXT,
+	age TEXT,
+	background TEXT,
+	traits TEXT, -- JSON存储
+	tone TEXT, -- JSON存储
+	interests TEXT, -- JSON存储
+	response_emojis BOOLEAN DEFAULT FALSE,
+	response_gestures BOOLEAN DEFAULT FALSE,
+	dialogue_reference TEXT,
+	creator TEXT,
+	creator_notes TEXT,
+	version INTEGER DEFAULT 0,
+	module_details TEXT, -- JSON存储
+	entries TEXT, -- JSON存储
+	-- 玩家角色专用字段
+	user_id TEXT, -- 仅用于玩家角色
+	persona_id TEXT, -- 仅用于玩家角色
+	created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+	updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+	FOREIGN KEY (world_id) REFERENCES worlds(world_id)
+);
+```
+
+#### 1.6.1 章节角色实例表 (chapter_character_instances) - **新增**
+```sql
+CREATE TABLE chapter_character_instances (
+	id INTEGER PRIMARY KEY,
+	chapter_id TEXT NOT NULL,
+	character_id TEXT NOT NULL,
+	-- 角色在该章节中的运行时状态
 	hp INTEGER DEFAULT 100,
 	mp INTEGER DEFAULT 100,
-	texture TEXT,
 	unit_type TEXT,
 	is_init BOOLEAN DEFAULT TRUE,
 	spawn_x REAL,
@@ -156,11 +194,15 @@ CREATE TABLE characters (
 	current_x REAL,
 	current_y REAL,
 	functions TEXT,
-	user_id TEXT, -- 仅用于玩家角色
-	persona_id TEXT, -- 仅用于玩家角色
+	-- 章节特定的配置覆盖
+	chapter_specific_config TEXT, -- JSON存储，可覆盖角色的基础配置
 	control_type INTEGER, -- 仅用于玩家角色
 	client_session_id TEXT, -- 仅用于玩家角色
-	FOREIGN KEY (chapter_id) REFERENCES chapters(chapter_id)
+	created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+	updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+	FOREIGN KEY (chapter_id) REFERENCES chapters(chapter_id),
+	FOREIGN KEY (character_id) REFERENCES characters(character_id),
+	UNIQUE(chapter_id, character_id)
 );
 ```
 
@@ -302,8 +344,11 @@ CREATE TABLE game_interactions (
 ```sql
 -- 提高查询性能的索引
 CREATE INDEX idx_chapters_game_id ON chapters(game_id);
-CREATE INDEX idx_characters_chapter_id ON characters(chapter_id);
+CREATE INDEX idx_characters_world_id ON characters(world_id);
+CREATE INDEX idx_characters_character_id ON characters(character_id);
 CREATE INDEX idx_characters_type ON characters(type);
+CREATE INDEX idx_chapter_character_instances_chapter_id ON chapter_character_instances(chapter_id);
+CREATE INDEX idx_chapter_character_instances_character_id ON chapter_character_instances(character_id);
 CREATE INDEX idx_buildings_map_id ON buildings(map_id);
 CREATE INDEX idx_buildings_chapter_id ON buildings(chapter_id);
 CREATE INDEX idx_goals_chapter_id ON goals(chapter_id);

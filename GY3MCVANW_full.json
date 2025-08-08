@@ -148,443 +148,6 @@
             "personal_setting": ""
           }
         ],
-        "characters": [
-          {
-            "id": "CJWFZIIYN",
-            "name": "角色名称",
-            "type": "npc",
-            "avatar": "",
-            "phases": ["default"],
-            "voice_profile": null,
-            "opening_line": "",
-            "intro": "",
-            "character_tags": [],
-            "image_references": [],
-            "modules": [],
-            "appearance": "",
-            "hp": 100,
-            "mp": 100,
-            "character_id": "",
-            "texture": "https://cdn.rpggo.ai/assets/game_resources/GY3MCVANW/sheets/2d6e4213d27f4f0a8667eead02d10d0a.png",
-            "unitType": "NPC",
-            "is_init": true,
-            "spawnX": 0,
-            "spawnY": 0,
-            "talkValue": "",
-            "actionKey": "",
-            "isPatrol": true,
-            "patrolRange": 60,
-            "patrolRangeType": 0,
-            "emoji": "",
-            "emojiDesc": "",
-            "emojiSummary": "",
-            "actionId": "ACmx4Up8NooI",
-            "basePosition": {
-              "x": 952,
-              "y": 200
-            },
-            "talkTopic": "",
-            "talkTopicEmoji": "💰😠🤝",
-            "arrivedTargetId": "",
-            "stillTime": 10272,
-            "patrolTimer": 30000,
-            "x": 904,
-            "y": 168,
-            "functions": "",
-            "max_epochs": "90",
-            "prompt": "",
-            "plugins": [
-              {
-                "phase": "default",
-                "plugins": [
-                  {
-                    "data": {
-                      "message": ""
-                    },
-                    "name": "HistoryPlugin"
-                  },
-                  {
-                    "data": {
-                      "message": ""
-                    },
-                    "name": "ChatPluginUser"
-                  }
-                ]
-              }
-            ],
-            "model_config": {
-              "chat_model": "gpt-3.5-turbo-0125",
-              "temperature": 0.5
-            },
-            "game_info": {
-              "max_epochs": "90",
-              "max_epochs_response": ""
-            },
-            "sprite_url": "",
-            "pronouns": "female",
-            "age": "",
-            "background": "",
-            "traits": [],
-            "tone": [],
-            "interests": null,
-            "response_emojis": false,
-            "response_gestures": false,
-            "dialogue_reference": "",
-            "creator": "",
-            "creator_notes": "",
-            "version": 0,
-            "module_details": null,
-            "entries": null
-          },
-          {
-            "id": "COU853NOI",
-            "name": "角色名称2",
-            "type": "npc",
-            "avatar": "",
-            "phases": ["default"],
-            "voice_profile": null,
-            "opening_line": "",
-            "intro": "",
-            "character_tags": [],
-            "image_references": [],
-            "modules": [],
-            "appearance": "",
-            "hp": 100,
-            "mp": 100,
-            "character_id": "",
-            "texture": "https://cdn.rpggo.ai/assets/game_resources/GY3MCVANW/sheets/1b4f66fca3cc40869194319c40c62659.png",
-            "unitType": "NPC",
-            "is_init": true,
-            "spawnX": 0,
-            "spawnY": 0,
-            "talkValue": "",
-            "actionKey": "",
-            "isPatrol": true,
-            "patrolRange": 60,
-            "patrolRangeType": 0,
-            "emoji": "✍️",
-            "emojiDesc": "Record findings and evidence.",
-            "emojiSummary": "",
-            "actionId": "ACYxoEIcaE0h",
-            "basePosition": {
-              "x": 280,
-              "y": 520
-            },
-            "talkTopic": "",
-            "talkTopicEmoji": "",
-            "arrivedTargetId": "",
-            "stillTime": 34323,
-            "patrolTimer": 30000,
-            "x": 312,
-            "y": 504,
-            "functions": "",
-            "max_epochs": "90",
-            "prompt": "",
-            "plugins": [
-              {
-                "phase": "default",
-                "plugins": [
-                  {
-                    "data": {
-                      "message": ""
-                    },
-                    "name": "HistoryPlugin"
-                  },
-                  {
-                    "data": {
-                      "message": ""
-                    },
-                    "name": "ChatPluginUser"
-                  }
-                ]
-              }
-            ],
-            "model_config": {
-              "chat_model": "gpt-3.5-turbo-0125",
-              "temperature": 0.5
-            },
-            "game_info": {
-              "max_epochs": "90",
-              "max_epochs_response": ""
-            },
-            "sprite_url": "",
-            "pronouns": "female",
-            "age": "",
-            "background": "",
-            "traits": [],
-            "tone": [],
-            "interests": null,
-            "response_emojis": false,
-            "response_gestures": false,
-            "dialogue_reference": "",
-            "creator": "",
-            "creator_notes": "",
-            "version": 0,
-            "module_details": null,
-            "entries": null
-          },
-          {
-            "id": "C6MR9FPGG",
-            "name": "角色名称3",
-            "type": "npc",
-            "avatar": "",
-            "phases": ["default"],
-            "voice_profile": null,
-            "opening_line": "",
-            "intro": "",
-            "character_tags": [],
-            "image_references": [],
-            "modules": [],
-            "appearance": "",
-            "hp": 100,
-            "mp": 100,
-            "character_id": "",
-            "texture": "https://cdn.rpggo.ai/assets/game_resources/GY3MCVANW/sheets/2dcd14fed5554f70a667accc7dc316d1.png",
-            "unitType": "NPC",
-            "is_init": true,
-            "spawnX": 0,
-            "spawnY": 0,
-            "talkValue": "",
-            "actionKey": "",
-            "isPatrol": true,
-            "patrolRange": 60,
-            "patrolRangeType": 0,
-            "emoji": "",
-            "emojiDesc": "",
-            "emojiSummary": "",
-            "actionId": "ACoSttG7ba1U",
-            "basePosition": {
-              "x": 152,
-              "y": 280
-            },
-            "talkTopic": "",
-            "talkTopicEmoji": "❓🤔💡",
-            "arrivedTargetId": "",
-            "stillTime": 22295,
-            "patrolTimer": 30000,
-            "x": 200,
-            "y": 264,
-            "functions": "",
-            "max_epochs": "90",
-            "prompt": "",
-            "plugins": [
-              {
-                "phase": "default",
-                "plugins": [
-                  {
-                    "data": {
-                      "message": ""
-                    },
-                    "name": "HistoryPlugin"
-                  },
-                  {
-                    "data": {
-                      "message": ""
-                    },
-                    "name": "ChatPluginUser"
-                  }
-                ]
-              }
-            ],
-            "model_config": {
-              "chat_model": "gpt-3.5-turbo-0125",
-              "temperature": 0.5
-            },
-            "game_info": {
-              "max_epochs": "90",
-              "max_epochs_response": ""
-            },
-            "sprite_url": "",
-            "pronouns": "female",
-            "age": "",
-            "background": "",
-            "traits": [],
-            "tone": [],
-            "interests": null,
-            "response_emojis": false,
-            "response_gestures": false,
-            "dialogue_reference": "",
-            "creator": "",
-            "creator_notes": "",
-            "version": 0,
-            "module_details": null,
-            "entries": null
-          },
-          {
-            "id": "C0JTV3CS4",
-            "name": "角色名称4",
-            "type": "npc",
-            "avatar": "",
-            "phases": ["default"],
-            "voice_profile": null,
-            "opening_line": "",
-            "intro": "",
-            "character_tags": [],
-            "image_references": [],
-            "modules": [],
-            "appearance": "",
-            "hp": 100,
-            "mp": 100,
-            "character_id": "",
-            "texture": "https://cdn.rpggo.ai/assets/game_resources/GY3MCVANW/sheets/f6fee6785bdc420f90b46d5058a95346.png",
-            "unitType": "NPC",
-            "is_init": true,
-            "spawnX": 0,
-            "spawnY": 0,
-            "talkValue": "",
-            "actionKey": "",
-            "isPatrol": true,
-            "patrolRange": 60,
-            "patrolRangeType": 0,
-            "emoji": "🤔",
-            "emojiDesc": "Analyze info, plan move on 大司马",
-            "emojiSummary": "",
-            "actionId": "ACYi3qOBAss2",
-            "basePosition": {
-              "x": 456,
-              "y": 328
-            },
-            "talkTopic": "",
-            "talkTopicEmoji": "❓🤔🗣️",
-            "arrivedTargetId": "",
-            "stillTime": 13276,
-            "patrolTimer": 30000,
-            "x": 528,
-            "y": 272,
-            "functions": "",
-            "max_epochs": "90",
-            "prompt": "",
-            "plugins": [
-              {
-                "phase": "default",
-                "plugins": [
-                  {
-                    "data": {
-                      "message": ""
-                    },
-                    "name": "HistoryPlugin"
-                  },
-                  {
-                    "data": {
-                      "message": ""
-                    },
-                    "name": "ChatPluginUser"
-                  }
-                ]
-              }
-            ],
-            "model_config": {
-              "chat_model": "gpt-3.5-turbo-0125",
-              "temperature": 0.5
-            },
-            "game_info": {
-              "max_epochs": "90",
-              "max_epochs_response": ""
-            },
-            "sprite_url": "",
-            "pronouns": "female",
-            "age": "",
-            "background": "",
-            "traits": [],
-            "tone": [],
-            "interests": null,
-            "response_emojis": false,
-            "response_gestures": false,
-            "dialogue_reference": "",
-            "creator": "",
-            "creator_notes": "",
-            "version": 0,
-            "module_details": null,
-            "entries": null
-          },
-          {
-            "id": "CV31IYUM1",
-            "name": "角色名称5",
-            "type": "npc",
-            "avatar": "",
-            "phases": ["default"],
-            "voice_profile": null,
-            "opening_line": "",
-            "intro": "",
-            "character_tags": [],
-            "image_references": [],
-            "modules": [],
-            "appearance": "",
-            "hp": 100,
-            "mp": 100,
-            "character_id": "",
-            "texture": "https://cdn.rpggo.ai/assets/game_resources/GY3MCVANW/sheets/ad059fffe7964eca8bd7fcd0f1050e1d.png",
-            "unitType": "NPC",
-            "is_init": true,
-            "spawnX": 0,
-            "spawnY": 0,
-            "talkValue": "",
-            "actionKey": "",
-            "isPatrol": true,
-            "patrolRange": 60,
-            "patrolRangeType": 0,
-            "emoji": "🧑‍🍳",
-            "emojiDesc": "Observe staff routines at restaurant.",
-            "emojiSummary": "",
-            "actionId": "ACmnTb9taLyi",
-            "basePosition": {
-              "x": 808,
-              "y": 104
-            },
-            "talkTopic": "",
-            "talkTopicEmoji": "",
-            "arrivedTargetId": "",
-            "stillTime": 31321,
-            "patrolTimer": 30000,
-            "x": 792,
-            "y": 88,
-            "functions": "",
-            "max_epochs": "90",
-            "prompt": "",
-            "plugins": [
-              {
-                "phase": "default",
-                "plugins": [
-                  {
-                    "data": {
-                      "message": ""
-                    },
-                    "name": "HistoryPlugin"
-                  },
-                  {
-                    "data": {
-                      "message": ""
-                    },
-                    "name": "ChatPluginUser"
-                  }
-                ]
-              }
-            ],
-            "model_config": {
-              "chat_model": "gpt-3.5-turbo-0125",
-              "temperature": 0.5
-            },
-            "game_info": {
-              "max_epochs": "90",
-              "max_epochs_response": ""
-            },
-            "sprite_url": "",
-            "pronouns": "female",
-            "age": "",
-            "background": "",
-            "traits": [],
-            "tone": [],
-            "interests": null,
-            "response_emojis": false,
-            "response_gestures": false,
-            "dialogue_reference": "",
-            "creator": "",
-            "creator_notes": "",
-            "version": 0,
-            "module_details": null,
-            "entries": null
-          }
-        ],
         "players": [
           {
             "id": "nVTzBZbqD",
@@ -826,6 +389,443 @@
       "last_play_time": "2025-05-15T09:11:54Z"
     }
   },
+  "characters": [
+    {
+      "id": "CJWFZIIYN",
+      "name": "角色名称",
+      "type": "npc",
+      "avatar": "",
+      "phases": ["default"],
+      "voice_profile": null,
+      "opening_line": "",
+      "intro": "",
+      "character_tags": [],
+      "image_references": [],
+      "modules": [],
+      "appearance": "",
+      "hp": 100,
+      "mp": 100,
+      "character_id": "",
+      "texture": "https://cdn.rpggo.ai/assets/game_resources/GY3MCVANW/sheets/2d6e4213d27f4f0a8667eead02d10d0a.png",
+      "unitType": "NPC",
+      "is_init": true,
+      "spawnX": 0,
+      "spawnY": 0,
+      "talkValue": "",
+      "actionKey": "",
+      "isPatrol": true,
+      "patrolRange": 60,
+      "patrolRangeType": 0,
+      "emoji": "",
+      "emojiDesc": "",
+      "emojiSummary": "",
+      "actionId": "ACmx4Up8NooI",
+      "basePosition": {
+        "x": 952,
+        "y": 200
+      },
+      "talkTopic": "",
+      "talkTopicEmoji": "💰😠🤝",
+      "arrivedTargetId": "",
+      "stillTime": 10272,
+      "patrolTimer": 30000,
+      "x": 904,
+      "y": 168,
+      "functions": "",
+      "max_epochs": "90",
+      "prompt": "",
+      "plugins": [
+        {
+          "phase": "default",
+          "plugins": [
+            {
+              "data": {
+                "message": ""
+              },
+              "name": "HistoryPlugin"
+            },
+            {
+              "data": {
+                "message": ""
+              },
+              "name": "ChatPluginUser"
+            }
+          ]
+        }
+      ],
+      "model_config": {
+        "chat_model": "gpt-3.5-turbo-0125",
+        "temperature": 0.5
+      },
+      "game_info": {
+        "max_epochs": "90",
+        "max_epochs_response": ""
+      },
+      "sprite_url": "",
+      "pronouns": "female",
+      "age": "",
+      "background": "",
+      "traits": [],
+      "tone": [],
+      "interests": null,
+      "response_emojis": false,
+      "response_gestures": false,
+      "dialogue_reference": "",
+      "creator": "",
+      "creator_notes": "",
+      "version": 0,
+      "module_details": null,
+      "entries": null
+    },
+    {
+      "id": "COU853NOI",
+      "name": "角色名称2",
+      "type": "npc",
+      "avatar": "",
+      "phases": ["default"],
+      "voice_profile": null,
+      "opening_line": "",
+      "intro": "",
+      "character_tags": [],
+      "image_references": [],
+      "modules": [],
+      "appearance": "",
+      "hp": 100,
+      "mp": 100,
+      "character_id": "",
+      "texture": "https://cdn.rpggo.ai/assets/game_resources/GY3MCVANW/sheets/1b4f66fca3cc40869194319c40c62659.png",
+      "unitType": "NPC",
+      "is_init": true,
+      "spawnX": 0,
+      "spawnY": 0,
+      "talkValue": "",
+      "actionKey": "",
+      "isPatrol": true,
+      "patrolRange": 60,
+      "patrolRangeType": 0,
+      "emoji": "✍️",
+      "emojiDesc": "Record findings and evidence.",
+      "emojiSummary": "",
+      "actionId": "ACYxoEIcaE0h",
+      "basePosition": {
+        "x": 280,
+        "y": 520
+      },
+      "talkTopic": "",
+      "talkTopicEmoji": "",
+      "arrivedTargetId": "",
+      "stillTime": 34323,
+      "patrolTimer": 30000,
+      "x": 312,
+      "y": 504,
+      "functions": "",
+      "max_epochs": "90",
+      "prompt": "",
+      "plugins": [
+        {
+          "phase": "default",
+          "plugins": [
+            {
+              "data": {
+                "message": ""
+              },
+              "name": "HistoryPlugin"
+            },
+            {
+              "data": {
+                "message": ""
+              },
+              "name": "ChatPluginUser"
+            }
+          ]
+        }
+      ],
+      "model_config": {
+        "chat_model": "gpt-3.5-turbo-0125",
+        "temperature": 0.5
+      },
+      "game_info": {
+        "max_epochs": "90",
+        "max_epochs_response": ""
+      },
+      "sprite_url": "",
+      "pronouns": "female",
+      "age": "",
+      "background": "",
+      "traits": [],
+      "tone": [],
+      "interests": null,
+      "response_emojis": false,
+      "response_gestures": false,
+      "dialogue_reference": "",
+      "creator": "",
+      "creator_notes": "",
+      "version": 0,
+      "module_details": null,
+      "entries": null
+    },
+    {
+      "id": "C6MR9FPGG",
+      "name": "角色名称3",
+      "type": "npc",
+      "avatar": "",
+      "phases": ["default"],
+      "voice_profile": null,
+      "opening_line": "",
+      "intro": "",
+      "character_tags": [],
+      "image_references": [],
+      "modules": [],
+      "appearance": "",
+      "hp": 100,
+      "mp": 100,
+      "character_id": "",
+      "texture": "https://cdn.rpggo.ai/assets/game_resources/GY3MCVANW/sheets/2dcd14fed5554f70a667accc7dc316d1.png",
+      "unitType": "NPC",
+      "is_init": true,
+      "spawnX": 0,
+      "spawnY": 0,
+      "talkValue": "",
+      "actionKey": "",
+      "isPatrol": true,
+      "patrolRange": 60,
+      "patrolRangeType": 0,
+      "emoji": "",
+      "emojiDesc": "",
+      "emojiSummary": "",
+      "actionId": "ACoSttG7ba1U",
+      "basePosition": {
+        "x": 152,
+        "y": 280
+      },
+      "talkTopic": "",
+      "talkTopicEmoji": "❓🤔💡",
+      "arrivedTargetId": "",
+      "stillTime": 22295,
+      "patrolTimer": 30000,
+      "x": 200,
+      "y": 264,
+      "functions": "",
+      "max_epochs": "90",
+      "prompt": "",
+      "plugins": [
+        {
+          "phase": "default",
+          "plugins": [
+            {
+              "data": {
+                "message": ""
+              },
+              "name": "HistoryPlugin"
+            },
+            {
+              "data": {
+                "message": ""
+              },
+              "name": "ChatPluginUser"
+            }
+          ]
+        }
+      ],
+      "model_config": {
+        "chat_model": "gpt-3.5-turbo-0125",
+        "temperature": 0.5
+      },
+      "game_info": {
+        "max_epochs": "90",
+        "max_epochs_response": ""
+      },
+      "sprite_url": "",
+      "pronouns": "female",
+      "age": "",
+      "background": "",
+      "traits": [],
+      "tone": [],
+      "interests": null,
+      "response_emojis": false,
+      "response_gestures": false,
+      "dialogue_reference": "",
+      "creator": "",
+      "creator_notes": "",
+      "version": 0,
+      "module_details": null,
+      "entries": null
+    },
+    {
+      "id": "C0JTV3CS4",
+      "name": "角色名称4",
+      "type": "npc",
+      "avatar": "",
+      "phases": ["default"],
+      "voice_profile": null,
+      "opening_line": "",
+      "intro": "",
+      "character_tags": [],
+      "image_references": [],
+      "modules": [],
+      "appearance": "",
+      "hp": 100,
+      "mp": 100,
+      "character_id": "",
+      "texture": "https://cdn.rpggo.ai/assets/game_resources/GY3MCVANW/sheets/f6fee6785bdc420f90b46d5058a95346.png",
+      "unitType": "NPC",
+      "is_init": true,
+      "spawnX": 0,
+      "spawnY": 0,
+      "talkValue": "",
+      "actionKey": "",
+      "isPatrol": true,
+      "patrolRange": 60,
+      "patrolRangeType": 0,
+      "emoji": "🤔",
+      "emojiDesc": "Analyze info, plan move on 大司马",
+      "emojiSummary": "",
+      "actionId": "ACYi3qOBAss2",
+      "basePosition": {
+        "x": 456,
+        "y": 328
+      },
+      "talkTopic": "",
+      "talkTopicEmoji": "❓🤔🗣️",
+      "arrivedTargetId": "",
+      "stillTime": 13276,
+      "patrolTimer": 30000,
+      "x": 528,
+      "y": 272,
+      "functions": "",
+      "max_epochs": "90",
+      "prompt": "",
+      "plugins": [
+        {
+          "phase": "default",
+          "plugins": [
+            {
+              "data": {
+                "message": ""
+              },
+              "name": "HistoryPlugin"
+            },
+            {
+              "data": {
+                "message": ""
+              },
+              "name": "ChatPluginUser"
+            }
+          ]
+        }
+      ],
+      "model_config": {
+        "chat_model": "gpt-3.5-turbo-0125",
+        "temperature": 0.5
+      },
+      "game_info": {
+        "max_epochs": "90",
+        "max_epochs_response": ""
+      },
+      "sprite_url": "",
+      "pronouns": "female",
+      "age": "",
+      "background": "",
+      "traits": [],
+      "tone": [],
+      "interests": null,
+      "response_emojis": false,
+      "response_gestures": false,
+      "dialogue_reference": "",
+      "creator": "",
+      "creator_notes": "",
+      "version": 0,
+      "module_details": null,
+      "entries": null
+    },
+    {
+      "id": "CV31IYUM1",
+      "name": "角色名称5",
+      "type": "npc",
+      "avatar": "",
+      "phases": ["default"],
+      "voice_profile": null,
+      "opening_line": "",
+      "intro": "",
+      "character_tags": [],
+      "image_references": [],
+      "modules": [],
+      "appearance": "",
+      "hp": 100,
+      "mp": 100,
+      "character_id": "",
+      "texture": "https://cdn.rpggo.ai/assets/game_resources/GY3MCVANW/sheets/ad059fffe7964eca8bd7fcd0f1050e1d.png",
+      "unitType": "NPC",
+      "is_init": true,
+      "spawnX": 0,
+      "spawnY": 0,
+      "talkValue": "",
+      "actionKey": "",
+      "isPatrol": true,
+      "patrolRange": 60,
+      "patrolRangeType": 0,
+      "emoji": "🧑‍🍳",
+      "emojiDesc": "Observe staff routines at restaurant.",
+      "emojiSummary": "",
+      "actionId": "ACmnTb9taLyi",
+      "basePosition": {
+        "x": 808,
+        "y": 104
+      },
+      "talkTopic": "",
+      "talkTopicEmoji": "",
+      "arrivedTargetId": "",
+      "stillTime": 31321,
+      "patrolTimer": 30000,
+      "x": 792,
+      "y": 88,
+      "functions": "",
+      "max_epochs": "90",
+      "prompt": "",
+      "plugins": [
+        {
+          "phase": "default",
+          "plugins": [
+            {
+              "data": {
+                "message": ""
+              },
+              "name": "HistoryPlugin"
+            },
+            {
+              "data": {
+                "message": ""
+              },
+              "name": "ChatPluginUser"
+            }
+          ]
+        }
+      ],
+      "model_config": {
+        "chat_model": "gpt-3.5-turbo-0125",
+        "temperature": 0.5
+      },
+      "game_info": {
+        "max_epochs": "90",
+        "max_epochs_response": ""
+      },
+      "sprite_url": "",
+      "pronouns": "female",
+      "age": "",
+      "background": "",
+      "traits": [],
+      "tone": [],
+      "interests": null,
+      "response_emojis": false,
+      "response_gestures": false,
+      "dialogue_reference": "",
+      "creator": "",
+      "creator_notes": "",
+      "version": 0,
+      "module_details": null,
+      "entries": null
+    }
+  ],
   "map_items": [],
   "map_data": {},
   "session_info": {

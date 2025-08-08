@@ -106,10 +106,10 @@ func initialize_cache_directories():
 	load_game_data()
 
 func load_remote_map():
-	#print("开始加载远程地图: ", remote_json_url)
+	print("开始加载远程地图: ", remote_json_url)
 	#http_request.request(remote_json_url)
 	var jsonRes = await Request._http_get(remote_json_url)
-	var game_json_res = jsonRes.data
+	var game_json_res = jsonRes
 	if !game_json_res:
 		return
 	GameCatch.save_game_json(JSON.stringify(game_json_res), game_id)
@@ -136,6 +136,8 @@ func process_game_data(game_data):
 			current_cache_version = server_cache_version
 			save_cache_version()
 	
+	if !map_data:
+		return
 	set_camera_limit.emit(map_data.width * map_data.tilewidth, map_data.height * map_data.tileheight)
 	
 	# 确保所需字段存在
@@ -968,9 +970,23 @@ func force_reload_tilesets():
 		print("没有图块集数据可重新加载")
 
 func load_game_data() -> void:
-	remote_json_url = REMOTE_JSON_PATH + game_id
-	var game_catch_data = await GameCatch.load_game_json(game_id)
-	if game_catch_data != null:
-		process_game_data(game_catch_data)
-		return
-	load_remote_map()
+	# 服务端加载sqlite数据库数据
+	if is_multiplayer_authority():
+		var game_data = await GameDataService.export_game_data_for_game_id(game_id)
+		process_game_data(game_data)
+	# 客户端通过接口加载数据
+	else:
+		print("客户端加载游戏数据")
+		remote_json_url = "http://" + GlobalData.server_ip + ":" + str(Config.HTTP_PORT) + "/api/game/export?game_id=" + game_id
+		var game_catch_data = await GameCatch.load_game_json(game_id)
+		if game_catch_data != null:
+			process_game_data(game_catch_data)
+			return
+		load_remote_map()
+	
+	# remote_json_url = REMOTE_JSON_PATH + game_id
+	# var game_catch_data = GameCatch.load_game_json(game_id)
+	# if game_catch_data != null:
+	# 	process_game_data(game_catch_data)
+	# 	return
+	# load_remote_map()

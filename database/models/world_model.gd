@@ -6,7 +6,7 @@ var world_id: String
 var name: String
 var user_id: String
 var world_view: String
-var reference: String
+var world_reference: String
 var knowledge_details: String
 var status: String = "normal"
 var version: int = 1
@@ -21,7 +21,7 @@ func _init(data: Dictionary = {}):
 	name = data.get("name", "")
 	user_id = data.get("user_id", "")
 	world_view = data.get("world_view", "")
-	reference = data.get("reference", "")
+	world_reference = data.get("reference", "")
 	knowledge_details = data.get("knowledge_details", "")
 	status = data.get("status", "normal")
 	version = data.get("version", 1)
@@ -42,7 +42,7 @@ func to_dict() -> Dictionary:
 		"name": name,
 		"user_id": user_id,
 		"world_view": world_view,
-		"reference": reference,
+		"reference": world_reference,
 		"knowledge_details": knowledge_details,
 		"status": status,
 		"version": version,

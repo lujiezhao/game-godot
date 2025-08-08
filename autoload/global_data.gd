@@ -8,3 +8,6 @@ extends Node
 @export var oauth_info: Variant = null
 
 var current_chapter_index: int = 0
+
+var server_ip: String = ""
+var server_port: int = 0

@@ -9,16 +9,16 @@ static func create(game: GameModel) -> bool:
 	
 	var query = """
 	INSERT INTO games (game_id, name, category, background, intro, image, lang, genre, user_id, 
-	                   moderation_level, background_musics, use_shared_memory, mechanics, operation_name,
-	                   initialize_2d_status, moderate_type, game_tags, social_references, source_template_id,
-	                   image_style, in_public_mode, editors, create_source)
+					   moderation_level, background_musics, use_shared_memory, mechanics, operation_name,
+					   initialize_2d_status, moderate_type, game_tags, social_references, source_template_id,
+					   image_style, in_public_mode, editors, create_source)
 	VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 	"""
 	
 	var params = [
 		game.game_id, game.name, game.category, game.background, game.intro,
 		game.image, game.lang, game.genre, game.user_id, game.moderation_level,
-		JSON.stringify(game.background_musics) if game.background_musics.size() > 0 else null,
+		JSON.stringify(game.background_musics) if game.background_musics.size() > 0 else "[]",
 		game.use_shared_memory, game.mechanics, game.operation_name, game.initialize_2d_status,
 		game.moderate_type, JSON.stringify(game.game_tags), JSON.stringify(game.social_references),
 		game.source_template_id, game.image_style, game.in_public_mode, 
@@ -57,17 +57,17 @@ static func update(game: GameModel) -> bool:
 	var query = """
 	UPDATE games 
 	SET name = ?, category = ?, background = ?, intro = ?, image = ?, lang = ?, genre = ?,
-	    moderation_level = ?, background_musics = ?, use_shared_memory = ?, mechanics = ?,
-	    operation_name = ?, initialize_2d_status = ?, moderate_type = ?, game_tags = ?,
-	    social_references = ?, image_style = ?, in_public_mode = ?, editors = ?,
-	    updated_at = CURRENT_TIMESTAMP
+		moderation_level = ?, background_musics = ?, use_shared_memory = ?, mechanics = ?,
+		operation_name = ?, initialize_2d_status = ?, moderate_type = ?, game_tags = ?,
+		social_references = ?, image_style = ?, in_public_mode = ?, editors = ?,
+		updated_at = CURRENT_TIMESTAMP
 	WHERE game_id = ?
 	"""
 	
 	var params = [
 		game.name, game.category, game.background, game.intro, game.image,
 		game.lang, game.genre, game.moderation_level,
-		JSON.stringify(game.background_musics) if game.background_musics.size() > 0 else null,
+		JSON.stringify(game.background_musics) if game.background_musics.size() > 0 else "[]",
 		game.use_shared_memory, game.mechanics, game.operation_name, game.initialize_2d_status,
 		game.moderate_type, JSON.stringify(game.game_tags), JSON.stringify(game.social_references),
 		game.image_style, game.in_public_mode, JSON.stringify(game.editors),

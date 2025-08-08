@@ -33,7 +33,7 @@ func init_building(building_data) -> void:
 	if building_data.is_init == false:
 		return
 	var building = BUILDING.instantiate() as Building
-	building.name = building_data.id
+	building.name = building_data.building_id
 	buildings.add_child(building, true)
 	building.add_to_group("Buildings")
 	building.add_to_group("Interactives")
@@ -42,8 +42,8 @@ func init_building(building_data) -> void:
 	building.position.y = building_data.y
 	building.collision_shape_2d.shape.size.x = building_data.width
 	building.collision_shape_2d.shape.size.y = building_data.height
-	var _scale = building_data.display_width / building_data.width
-	building.scale = Vector2(_scale, _scale)
+	var _scale = float(building_data.display_width) / float(building_data.width)
+	building.global_scale = Vector2(_scale, _scale)
 	#printt(building_data.id, building_data.display_width, building_data.display_height)
 
 func _on_game_map_ready() -> void:

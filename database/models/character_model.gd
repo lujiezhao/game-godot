@@ -1,9 +1,10 @@
 class_name CharacterModel
 extends RefCounted
 
+# 基础角色信息
 var id: int
 var character_id: String
-var chapter_id: String
+var world_id: String
 var name: String
 var type: String
 var avatar: String
@@ -15,34 +16,9 @@ var character_tags: Array = []
 var image_references: Array = []
 var modules: Array = []
 var appearance: String
-var hp: int = 100
-var mp: int = 100
 var texture: String
-var unit_type: String
-var is_init: bool = true
-var spawn_x: float
-var spawn_y: float
-var talk_value: String
-var action_key: String
-var is_patrol: bool = false
-var patrol_range: int = 60
-var patrol_range_type: int = 0
-var emoji: String
-var emoji_desc: String
-var emoji_summary: String
-var action_id: String
-var base_position_x: float
-var base_position_y: float
-var talk_topic: String
-var talk_topic_emoji: String
-var arrived_target_id: String
-var still_time: int = 0
-var patrol_timer: int = 30000
-var current_x: float
-var current_y: float
-var functions: String
 
-# 创作者配置字段
+# 创作者配置字段（角色的基础设定）
 var max_epochs: String = "90"
 var prompt: String
 var plugins: Array = []
@@ -67,8 +43,6 @@ var entries: Array = []
 # 玩家角色专用字段
 var user_id: String
 var persona_id: String
-var control_type: int
-var client_session_id: String
 
 var created_at: String
 var updated_at: String
@@ -77,7 +51,7 @@ func _init(data: Dictionary = {}):
 	if data.has("id"):
 		id = data.id
 	character_id = data.get("character_id", "")
-	chapter_id = data.get("chapter_id", "")
+	world_id = data.get("world_id", "")
 	name = data.get("name", "")
 	type = data.get("type", "")
 	avatar = data.get("avatar", "")
@@ -85,32 +59,7 @@ func _init(data: Dictionary = {}):
 	opening_line = data.get("opening_line", "")
 	intro = data.get("intro", "")
 	appearance = data.get("appearance", "")
-	hp = data.get("hp", 100)
-	mp = data.get("mp", 100)
 	texture = data.get("texture", "")
-	unit_type = data.get("unit_type", "")
-	is_init = data.get("is_init", true)
-	spawn_x = data.get("spawn_x", 0.0)
-	spawn_y = data.get("spawn_y", 0.0)
-	talk_value = data.get("talk_value", "")
-	action_key = data.get("action_key", "")
-	is_patrol = data.get("is_patrol", false)
-	patrol_range = data.get("patrol_range", 60)
-	patrol_range_type = data.get("patrol_range_type", 0)
-	emoji = data.get("emoji", "")
-	emoji_desc = data.get("emoji_desc", "")
-	emoji_summary = data.get("emoji_summary", "")
-	action_id = data.get("action_id", "")
-	base_position_x = data.get("base_position_x", 0.0)
-	base_position_y = data.get("base_position_y", 0.0)
-	talk_topic = data.get("talk_topic", "")
-	talk_topic_emoji = data.get("talk_topic_emoji", "")
-	arrived_target_id = data.get("arrived_target_id", "")
-	still_time = data.get("still_time", 0)
-	patrol_timer = data.get("patrol_timer", 30000)
-	current_x = data.get("current_x", 0.0)
-	current_y = data.get("current_y", 0.0)
-	functions = data.get("functions", "")
 	
 	# 创作者配置
 	max_epochs = data.get("max_epochs", "90")
@@ -129,34 +78,91 @@ func _init(data: Dictionary = {}):
 	# 玩家角色字段
 	user_id = data.get("user_id", "")
 	persona_id = data.get("persona_id", "")
-	control_type = data.get("control_type", 0)
-	client_session_id = data.get("client_session_id", "")
 	
 	created_at = data.get("created_at", "")
 	updated_at = data.get("updated_at", "")
 	
-	# 处理JSON字段
+	# 解析JSON字段
 	_parse_json_fields(data)
 
 func _parse_json_fields(data: Dictionary):
-	var json_fields = [
-		"phases", "character_tags", "image_references", "modules",
-		"plugins", "model_config", "game_info", "traits", "tone",
-		"interests", "module_details", "entries"
-	]
+	if data.has("phases"):
+		if data.phases is String:
+			phases = JSON.parse_string(data.phases) if data.phases != "" else ["default"]
+		else:
+			phases = data.phases
 	
-	for field in json_fields:
-		if data.has(field):
-			if data[field] is String and data[field] != "":
-				set(field, JSON.parse_string(data[field]))
-			elif data[field] != null:
-				set(field, data[field])
+	if data.has("character_tags"):
+		if data.character_tags is String:
+			character_tags = JSON.parse_string(data.character_tags) if data.character_tags != "" else []
+		else:
+			character_tags = data.character_tags
+	
+	if data.has("image_references"):
+		if data.image_references is String:
+			image_references = JSON.parse_string(data.image_references) if data.image_references != "" else []
+		else:
+			image_references = data.image_references
+	
+	if data.has("modules"):
+		if data.modules is String:
+			modules = JSON.parse_string(data.modules) if data.modules != "" else []
+		else:
+			modules = data.modules
+	
+	if data.has("plugins"):
+		if data.plugins is String:
+			plugins = JSON.parse_string(data.plugins) if data.plugins != "" else []
+		else:
+			plugins = data.plugins
+	
+	if data.has("model_config"):
+		if data.model_config is String:
+			model_config = JSON.parse_string(data.model_config) if data.model_config != "" else {}
+		else:
+			model_config = data.model_config
+	
+	if data.has("game_info"):
+		if data.game_info is String:
+			game_info = JSON.parse_string(data.game_info) if data.game_info != "" else {}
+		else:
+			game_info = data.game_info
+	
+	if data.has("traits"):
+		if data.traits is String:
+			traits = JSON.parse_string(data.traits) if data.traits != "" else []
+		else:
+			traits = data.traits
+	
+	if data.has("tone"):
+		if data.tone is String:
+			tone = JSON.parse_string(data.tone) if data.tone != "" else []
+		else:
+			tone = data.tone
+	
+	if data.has("interests"):
+		if data.interests is String:
+			interests = JSON.parse_string(data.interests) if data.interests != "" else []
+		else:
+			interests = data.interests
+	
+	if data.has("module_details"):
+		if data.module_details is String:
+			module_details = JSON.parse_string(data.module_details) if data.module_details != "" else {}
+		else:
+			module_details = data.module_details
+	
+	if data.has("entries"):
+		if data.entries is String:
+			entries = JSON.parse_string(data.entries) if data.entries != "" else []
+		else:
+			entries = data.entries
 
 func to_dict() -> Dictionary:
 	var result = {
 		"id": id,
 		"character_id": character_id,
-		"chapter_id": chapter_id,
+		"world_id": world_id,
 		"name": name,
 		"type": type,
 		"avatar": avatar,
@@ -168,32 +174,7 @@ func to_dict() -> Dictionary:
 		"image_references": JSON.stringify(image_references),
 		"modules": JSON.stringify(modules),
 		"appearance": appearance,
-		"hp": hp,
-		"mp": mp,
 		"texture": texture,
-		"unit_type": unit_type,
-		"is_init": is_init,
-		"spawn_x": spawn_x,
-		"spawn_y": spawn_y,
-		"talk_value": talk_value,
-		"action_key": action_key,
-		"is_patrol": is_patrol,
-		"patrol_range": patrol_range,
-		"patrol_range_type": patrol_range_type,
-		"emoji": emoji,
-		"emoji_desc": emoji_desc,
-		"emoji_summary": emoji_summary,
-		"action_id": action_id,
-		"base_position_x": base_position_x,
-		"base_position_y": base_position_y,
-		"talk_topic": talk_topic,
-		"talk_topic_emoji": talk_topic_emoji,
-		"arrived_target_id": arrived_target_id,
-		"still_time": still_time,
-		"patrol_timer": patrol_timer,
-		"current_x": current_x,
-		"current_y": current_y,
-		"functions": functions,
 		"max_epochs": max_epochs,
 		"prompt": prompt,
 		"plugins": JSON.stringify(plugins),
@@ -216,8 +197,6 @@ func to_dict() -> Dictionary:
 		"entries": JSON.stringify(entries),
 		"user_id": user_id,
 		"persona_id": persona_id,
-		"control_type": control_type,
-		"client_session_id": client_session_id,
 		"created_at": created_at,
 		"updated_at": updated_at
 	}
@@ -225,7 +204,7 @@ func to_dict() -> Dictionary:
 	return result
 
 func validate() -> bool:
-	return character_id != "" and name != "" and type != "" and chapter_id != ""
+	return character_id != "" and world_id != "" and name != "" and type != ""
 
 func is_npc() -> bool:
 	return type == "npc"

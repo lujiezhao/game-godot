@@ -26,7 +26,7 @@ func init_npc(npc_data):
 	npc.add_to_group("Interactives")
 	if npc_data.texture and npc.texture_synchronizer:
 		npc.texture_synchronizer.set_texture_url(npc_data.texture)
-	npc.position.x = npc_data.x
-	npc.position.y = npc_data.y
+	npc.position.x = float(npc_data.current_x)
+	npc.position.y = float(npc_data.current_y)
 	npc.character_name = npc_data.name
 	

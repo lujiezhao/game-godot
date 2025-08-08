@@ -125,8 +125,9 @@ func create_server():
 
 func create_client():
 	var port_value = port.text.to_int()
+	GlobalData.server_port = port_value
 	var ip_value = ip.text
-	
+	GlobalData.server_ip = ip_value
 	print("尝试连接到服务器: %s:%d" % [ip_value, port_value])
 	
 	# 验证连接参数

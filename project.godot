@@ -27,6 +27,10 @@ HttpServer="*res://autoload/http_server.gd"
 GameEvent="*res://autoload/game_event.gd"
 TextureManager="*res://autoload/texture_manager.gd"
 
+[debug]
+
+gdscript/warnings/integer_division=0
+
 [display]
 
 window/size/viewport_width=640

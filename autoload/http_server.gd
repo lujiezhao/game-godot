@@ -2,11 +2,15 @@
 extends Node
 
 var _server: TCPServer
-var _port: int = 9080
+var _port: int = Config.HTTP_PORT
 var _thread: Thread
 var _is_running: bool = true
+var _route_manager: RouteManager
 
 func _ready():
+	# 初始化路由管理器
+	_route_manager = RouteManager.new()
+	print("🚀 HTTP Server 路由系统已初始化")
 	#start_http_server()
 	pass
 
@@ -29,25 +33,34 @@ func _listen_thread():
 		OS.delay_msec(10)  # 防止CPU占用过高
 
 func handle_connection(peer: StreamPeerTCP):
+	print("🔗 新连接建立")
+	
 	# 安全读取所有可用数据
 	var request_data = PackedByteArray()
-	var last_size = 0
 	
-	# 使用超时循环读取数据
+	# 使用更简单直接的读取方式
 	var start_time = Time.get_ticks_msec()
-	while Time.get_ticks_msec() - start_time < 5000:  # 5秒超时
+	var timeout_ms = 5000  # 5秒超时
+	
+	# 等待数据到达
+	while Time.get_ticks_msec() - start_time < timeout_ms:
 		var available_bytes = peer.get_available_bytes()
-		if available_bytes > 0 and available_bytes != last_size:
-			var data = peer.get_partial_data(available_bytes)[1]
-			if data:
-				request_data.append_array(data)
-				last_size = available_bytes
-		elif available_bytes == 0 and request_data.size() > 0:
-			break  # 没有更多数据了
+		if available_bytes > 0:
+			var result = peer.get_partial_data(available_bytes)
+			if result[0] == OK and result[1].size() > 0:
+				request_data.append_array(result[1])
+				print("📥 读取到 %d 字节数据" % result[1].size())
+			
+			# 检查是否读取到完整的HTTP请求（以双换行结束）
+			var current_string = request_data.get_string_from_utf8()
+			if "\r\n\r\n" in current_string or "\n\n" in current_string:
+				print("📥 HTTP请求读取完成，总长度: %d 字节" % request_data.size())
+				break
+		
 		OS.delay_msec(10)
 	
 	if request_data.size() == 0:
-		print("No data received from client")
+		print("❌ 客户端未发送数据或连接超时")
 		peer.disconnect_from_host()
 		return
 	
@@ -65,68 +78,83 @@ func handle_connection(peer: StreamPeerTCP):
 			else:
 				safe_string += "\\x%02X" % b
 		request_string = safe_string
-		print("Received non-UTF8 data: ", safe_string)
+		print("⚠️ 接收到非UTF8数据: ", safe_string)
 	
 	# 确保有数据行
 	var lines = request_string.split("\n")
 	if lines.size() == 0:
+		print("❌ 请求格式错误")
 		peer.disconnect_from_host()
 		return
 	
 	# 解析请求行
-	var request_line = lines[0].split(" ", false)
+	var request_line = lines[0].strip_edges().split(" ", false)
 	if request_line.size() < 2:
+		print("❌ 请求行格式错误: %s" % lines[0])
 		peer.disconnect_from_host()
 		return
 	
 	var method = request_line[0]
 	var path = request_line[1]
 	
+	print("📋 处理请求: %s %s" % [method, path])
+	
 	# 处理请求并发送响应
-	var response = _handle_request(method, path, request_string)
+	var response = await _handle_request(method, path, request_string)
 	_send_response(peer, response)
+	
+	# 给客户端时间完成接收
+	OS.delay_msec(500)
 	
 	# 清理
 	peer.disconnect_from_host()
+	print("🔌 连接已关闭")
 
 # 更健壮的响应发送
 func _send_response(peer: StreamPeerTCP, response: String):
 	var bytes = response.to_utf8_buffer()
 	var total_sent = 0
 	
+	print("📤 开始发送响应，总长度: %d 字节" % bytes.size())
+	
+	# 发送数据
 	while total_sent < bytes.size():
-		var chunk = bytes.slice(total_sent)
+		var remaining = bytes.size() - total_sent
+		var chunk_size = min(remaining, 4096)  # 减小块大小，提高稳定性
+		var chunk = bytes.slice(total_sent, total_sent + chunk_size)
 		var status = peer.put_partial_data(chunk)
 		
 		if status[0] != OK:
-			print("Error sending response: ", error_string(status[0]))
+			print("❌ 发送响应时出错: %s, 已发送: %d/%d 字节" % [error_string(status[0]), total_sent, bytes.size()])
 			break
 		
 		total_sent += status[1]
-		OS.delay_msec(5)
+		print("📤 已发送: %d/%d 字节 (当前块: %d 字节)" % [total_sent, bytes.size(), status[1]])
+		
+		# 如果当前块发送不完整，说明缓冲区满了，等待一下
+		if status[1] < chunk_size:
+			OS.delay_msec(50)
+		else:
+			OS.delay_msec(10)
+	
+	# 确保数据发送完成
+	if total_sent == bytes.size():
+		print("✅ 响应发送完成: %d 字节" % total_sent)
+		# 强制刷新缓冲区
+		OS.delay_msec(100)
+	else:
+		print("⚠️ 响应发送不完整: %d/%d 字节" % [total_sent, bytes.size()])
+	
+	# 给客户端时间处理数据
+	OS.delay_msec(200)
 
-func _handle_request(method: String, path: String, _full_request: String) -> String:
-	# 示例API处理
-	match path:
-		"/get_user_info":
-			if method != "GET":
-				return _build_response(405, "Method Not Allowed", "text/plain", "Only GET supported")
-				
-			# 实际应用中这里从游戏服务器获取数据
-			var user_data = {
-				"id": 1001,
-				"name": "JohnDoe",
-				"level": 25,
-				"last_login": "2023-07-29T12:34:56Z"
-			}
-			
-			return _build_response(200, "OK", "application/json", JSON.stringify(user_data))
-			
-		"/health":
-			return _build_response(200, "OK", "text/plain", "SERVER OK")
-			
-		_:
-			return _build_response(404, "Not Found", "text/plain", "Endpoint not found")
+func _handle_request(method: String, path: String, full_request: String) -> String:
+	# 使用路由管理器处理请求
+	if _route_manager:
+		return await _route_manager.handle_request(method, path, full_request)
+	else:
+		# 备用处理（路由管理器未初始化）
+		return _build_response(500, "Internal Server Error", "text/plain", "Route manager not initialized")
 
 func _build_response(code: int, status: String, content_type: String, body: String) -> String:
 	return "HTTP/1.1 %d %s\r\nContent-Type: %s\r\nContent-Length: %d\r\n\r\n%s" % [

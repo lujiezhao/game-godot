@@ -1,5 +1,7 @@
 {
   "files.exclude": {
     "**/*.uid": true
-  }
+  },
+  "editor.insertSpaces": false,
+  "editor.tabSize": 2
 }

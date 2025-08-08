@@ -91,7 +91,7 @@ func to_dict() -> Dictionary:
 		"genre": genre,
 		"user_id": user_id,
 		"moderation_level": moderation_level,
-		"background_musics": JSON.stringify(background_musics) if background_musics.size() > 0 else null,
+		"background_musics": JSON.stringify(background_musics) if background_musics.size() > 0 else "[]",
 		"use_shared_memory": use_shared_memory,
 		"mechanics": mechanics,
 		"operation_name": operation_name,

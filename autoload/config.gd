@@ -9,3 +9,5 @@ var GAME_SERVICE_HOST = "https://backend-pro-qavdnvfe5a-uc.a.run.app"
 var PERSONA_GET_URL = "%s/open/player/persona/get" % GAME_SERVICE_HOST
 
 var AUTHORIZATION = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.-a5bQVA4a4ytSWsiYhzLCgXCD-Irg98hkVzBhBPLulM"
+
+var HTTP_PORT = 9080
