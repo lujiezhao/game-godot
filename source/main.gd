@@ -40,6 +40,7 @@ func init_building(building_data) -> void:
 	building.set_texture(building_data.texture)
 	building.position.x = building_data.x
 	building.position.y = building_data.y
+	building.collision_shape_2d.shape = RectangleShape2D.new()
 	building.collision_shape_2d.shape.size.x = building_data.width
 	building.collision_shape_2d.shape.size.y = building_data.height
 	var _scale = float(building_data.display_width) / float(building_data.width)

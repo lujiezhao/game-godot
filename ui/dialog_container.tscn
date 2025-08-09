@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxc0gb44vonk6"]
+
+[ext_resource type="StyleBox" uid="uid://c28begrfae4yu" path="res://resources/box/dialog_theme.tres" id="1_0cajf"]
+
+[sub_resource type="Theme" id="Theme_dwx3i"]
+PanelContainer/styles/panel = ExtResource("1_0cajf")
+
+[node name="PanelContainer" type="PanelContainer"]
+offset_right = 32.0
+offset_bottom = 32.0
+theme = SubResource("Theme_dwx3i")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 28

@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxvp7bhe430i5"]
+
+[ext_resource type="PackedScene" uid="uid://cxc0gb44vonk6" path="res://ui/dialog_container.tscn" id="1_nb4k0"]
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -312.0
+offset_right = 456.0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(0, 312)
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="PanelContainer" parent="CanvasLayer/MarginContainer" instance=ExtResource("1_nb4k0")]
+layout_mode = 2
+size_flags_vertical = 8
+
+[editable path="CanvasLayer/MarginContainer/PanelContainer"]

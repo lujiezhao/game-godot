@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://crq8smikrb6cf"]
+[gd_scene load_steps=8 format=3 uid="uid://crq8smikrb6cf"]
 
 [ext_resource type="Script" uid="uid://b67gulvuyto10" path="res://source/main.gd" id="1_kaxhg"]
 [ext_resource type="PackedScene" uid="uid://dif4nrmai8j2t" path="res://source/game_map.tscn" id="2_62cc7"]
 [ext_resource type="TileSet" uid="uid://cvvx2xy4xfx62" path="res://source/collision.tres" id="3_s8x7u"]
 [ext_resource type="Script" uid="uid://dn7qmwc3ge804" path="res://source/npcs.gd" id="6_2uit2"]
 [ext_resource type="Script" uid="uid://dn3v4tec5rup5" path="res://source/camera_2d.gd" id="6_4naa1"]
+[ext_resource type="PackedScene" uid="uid://bxvp7bhe430i5" path="res://ui/game_ui.tscn" id="6_s8x7u"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_c1q7g"]
 properties/0/path = NodePath(".:game_id")
@@ -47,5 +48,7 @@ y_sort_enabled = true
 [node name="Npcs" type="Node2D" parent="Characters"]
 y_sort_enabled = true
 script = ExtResource("6_2uit2")
+
+[node name="GameUi" parent="." instance=ExtResource("6_s8x7u")]
 
 [editable path="game_map"]
